@@ -1,0 +1,18 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+      flickr_key: 0430a5b3a973e9d5c1ef197911ae86e0
+      flickr_secret: 4f89638995b14061
+      flickr_photos_per_page: 20
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+      app.flickr:
+          class: AppBundle\Utils\phpFlickr
+          arguments:
+                - ["%flickr_key%"]
+                - ["%flickr_secret%"]
+                - ["%flickr_photos_per_page%"]

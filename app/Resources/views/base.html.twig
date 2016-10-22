@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>WHIZZ {% block title %}{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <!-- CSS Section -->
+        <link href="{{ asset('vendor/css/bootstrap.min.css') }}" rel='stylesheet'>
+        <link href="{{ asset('vendor/css/normalize.css') }}" rel='stylesheet'>
+        <link href="{{ asset('vendor/css/font-awesome.min.css') }}" rel='stylesheet'>
+        <link href="{{ asset('css/vertical-responsive-menu.min.css') }}" rel='stylesheet'>
+        <link href="{{ asset('css/whizz.css') }}" rel='stylesheet'>
+        {% block stylesheets %}{% endblock %}
+
+        <!-- JavaScript Section -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script src="{{ asset('vendor/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('vendor/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/vertical-responsive-menu.min.js') }}"></script>
+
+        {% block javascripts %}{% endblock %}
+
+    </head>
+
+<body>
+
+<header class="header clearfix">
+    <button type="button" id="toggleMenu" class="toggle_menu">
+        <i class="fa fa-bars"></i>
+    </button>
+    <h1>WHIZZ</h1>
+</header>
+
+{# include the nav #}
+{{ include('partials/nav.html.twig', {'categories':categories}) }}
+
+<div class="wrapper default">
+
+    <section>
+        {% block body %}{% endblock %}
+    </section>
+
+</div>
+
+</body>
+</html>

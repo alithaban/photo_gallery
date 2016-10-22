@@ -1,0 +1,24 @@
+{# If there are categories, then show the nav#}
+{% if(categories) %}
+<nav class="vertical_nav">
+
+    <ul id="js-menu" class="menu">
+
+        {% for category in categories %}
+            <li class="menu--item">
+                <a title="View photos of {{ category.getName() }}"  data-category-name="{{ category.getName() }}" href="#" class="menu--link">
+                    <i class="menu--icon  fa fa-fw fa-picture-o"></i>
+                    <span class="menu--label">{{ category.getName() }}</span>
+                </a>
+            </li>
+        {% endfor %}
+
+    </ul>
+
+    <button id="collapse_menu" class="collapse_menu">
+        <i class="collapse_menu--icon  fa fa-fw"></i>
+        <span class="collapse_menu--label">Recolher menu</span>
+    </button>
+
+</nav>
+{% endif %}

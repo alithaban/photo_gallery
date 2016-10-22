@@ -1,0 +1,30 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+get-photos:
+    path: /get-photos
+    defaults:  { _controller: AppBundle:Default:getPhotos }
+
+get-photo:
+    path: /get-photo
+    defaults:  { _controller: AppBundle:Default:getPhoto }
+
+logout:
+    path: /logout
+
+admin/categories:
+    path:      /admin/categories
+    defaults:  { _controller: AppBundle:Category:list }
+
+admin/add-category:
+    path:      /admin/add-category
+    defaults:  { _controller: AppBundle:Category:add }
+
+admin/update-category:
+    path:      /admin/update-category
+    defaults:  { _controller: AppBundle:Category:update }
+
+admin/delete-category:
+    path:      /admin/delete-category
+    defaults:  { _controller: AppBundle:Category:delete }

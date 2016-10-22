@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/default/default.js') }}"></script>
+    <script src="{{ asset('vendor/js/jquery.popupoverlay.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="panel title panel-default">
+        <div class="panel-body text-center"><h2>Gallery Categories</h2></div>
+    </div>
+
+    {% if(categories) %}
+        <div class="text-center row"><span>Select a category from the left to see the images</span></div>
+        <div class="">&nbsp;</div>
+    {% endif %}
+
+    <div class="panel panel-default gallery">
+        <div id="photos" class="row panel-body text-center">
+        </div>
+    </div>
+
+    <!-- Start Popup -->
+    <div id="photo-popup">
+        <i title="Back to gallery" class="fa fa-times-circle-o fa-3x close-popup" aria-hidden="true"></i>
+        <br />
+        <div class="clear">&nbsp;</div>
+        <div class=row">
+            <div id="photo-description">
+                <div id="title">
+                    <h3></h3>
+                </div>
+
+                <div id="description">
+
+                </div>
+
+            </div>
+            <div id="photo-image" >
+                <img src="">
+            </div>
+        </div>
+    </div>
+{% endblock %}
