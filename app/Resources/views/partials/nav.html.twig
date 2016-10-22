@@ -1,7 +1,7 @@
 {# If there are categories, then show the nav#}
-{% if(categories) %}
-<nav class="vertical_nav">
 
+<nav class="vertical_nav">
+    {% if(categories) %}
     <ul id="js-menu" class="menu">
 
         {% for category in categories %}
@@ -19,6 +19,8 @@
         <i class="collapse_menu--icon  fa fa-fw"></i>
         <span class="collapse_menu--label">Recolher menu</span>
     </button>
-
+    {% else %}
+        No category.<br />
+        <a href="/login" title="login">login</a> and add categories
+    {% endif %}
 </nav>
-{% endif %}
